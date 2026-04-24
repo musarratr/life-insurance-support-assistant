@@ -6,3 +6,4 @@ openai
 langchain
 langchain-openai
 requests
+streamlit

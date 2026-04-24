@@ -3,7 +3,7 @@
 A simple Python 3.9+ conversational assistant for general life insurance
 support. It uses FastAPI for the backend API, OpenAI through LangChain for
 responses, a markdown knowledge base for domain context, SQLite for local
-conversation memory, and a basic CLI for chat.
+conversation memory, a Streamlit chat interface, and a basic CLI for chat.
 
 ## Features
 
@@ -13,6 +13,7 @@ conversation memory, and a basic CLI for chat.
 - Conversation context stored locally in SQLite by `session_id`
 - Configurable knowledge base at `data/life_insurance_kb.md`
 - FastAPI endpoints for health, chat, and session reset
+- Responsive Streamlit chat interface
 - CLI chat client for demos and local testing
 - Safety guidance for general educational information only
 
@@ -23,6 +24,7 @@ conversation memory, and a basic CLI for chat.
 - `app/memory.py` stores and retrieves recent messages from SQLite.
 - `app/knowledge_base.py` loads the editable markdown knowledge base.
 - `app/config.py` loads environment variables from `.env`.
+- `streamlit_app.py` provides a local web chat interface.
 - `cli.py` sends chat requests to the running API.
 
 ## Repository Structure
@@ -38,6 +40,7 @@ life-insurance-support-assistant/
 │   └── config.py
 ├── data/
 │   └── life_insurance_kb.md
+├── streamlit_app.py
 ├── cli.py
 ├── requirements.txt
 ├── .env.example
@@ -79,6 +82,17 @@ API_BASE_URL=http://127.0.0.1:8000
 ```
 
 Do not commit `.env`. It is ignored by git.
+
+## Run the Streamlit Chat Interface
+
+Launch the web chat interface with one command:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+The Streamlit app uses the same OpenAI agent, knowledge base, and SQLite memory
+as the API. You do not need to start the FastAPI server first.
 
 ## Run the API
 
@@ -142,8 +156,8 @@ licensed professional.
 For a 3 to 5 minute demo, show:
 
 1. The repository structure and `.env.example`.
-2. The FastAPI server starting with `uvicorn app.main:app --reload`.
-3. The CLI starting with `python cli.py`.
-4. A few life insurance questions across the same session.
-5. A follow-up question that proves conversation memory works.
-6. A policy-specific question where the assistant avoids making guarantees.
+2. The Streamlit chat interface starting with `streamlit run streamlit_app.py`.
+3. A few life insurance questions across the same session.
+4. A follow-up question that proves conversation memory works.
+5. A policy-specific question where the assistant avoids making guarantees.
+6. Optionally, show the FastAPI server and CLI as alternate interfaces.

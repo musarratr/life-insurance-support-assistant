@@ -4,8 +4,9 @@ Use this script for a 3 to 5 minute walkthrough video.
 
 ## 1. Introduce the Project
 
-"This is a simple Life Insurance Support Assistant built with Python, FastAPI,
-OpenAI, LangChain, SQLite memory, and a configurable markdown knowledge base."
+"This is a simple Life Insurance Support Assistant built with Python, Streamlit,
+FastAPI, OpenAI, LangChain, SQLite memory, and a configurable markdown knowledge
+base."
 
 Show the repository structure and point out:
 
@@ -13,36 +14,16 @@ Show the repository structure and point out:
 - `app/agent.py` for the LangChain assistant workflow
 - `app/memory.py` for SQLite conversation memory
 - `data/life_insurance_kb.md` for editable insurance knowledge
+- `streamlit_app.py` for the web chat interface
 - `cli.py` for text chat
 
-## 2. Start the API
+## 2. Start the Streamlit Chat Interface
 
 Run:
 
 ```bash
 source .venv/bin/activate
-uvicorn app.main:app --reload
-```
-
-Open or mention:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-Expected response:
-
-```json
-{"status":"ok"}
-```
-
-## 3. Start the CLI
-
-In a second terminal, run:
-
-```bash
-source .venv/bin/activate
-python cli.py
+streamlit run streamlit_app.py
 ```
 
 Use session ID:
@@ -51,9 +32,9 @@ Use session ID:
 demo
 ```
 
-## 4. Ask Example Questions
+## 3. Ask Example Questions
 
-Ask these questions in order:
+Ask these questions in order in the Streamlit chat box:
 
 ```text
 What is term life insurance?
@@ -79,7 +60,7 @@ How does a beneficiary file a claim?
 What documents are usually required?
 ```
 
-## 5. Show Conversation Memory
+## 4. Show Conversation Memory
 
 Ask:
 
@@ -90,7 +71,7 @@ Can you summarize what we discussed about term life?
 Point out that the assistant uses the same session ID and SQLite memory to keep
 recent conversation context.
 
-## 6. Show Safe-Answer Behavior
+## 5. Show Safe-Answer Behavior
 
 Ask:
 
@@ -102,13 +83,21 @@ Expected behavior: the assistant should avoid guaranteeing a claim or coverage
 decision and recommend contacting the insurer or a licensed professional for the
 specific policy.
 
-## 7. Reset the Session
+## 6. Reset the Session
 
-Run this CLI command:
-
-```text
-reset
-```
+Click `Reset Chat` in the sidebar.
 
 Explain that this clears the current SQLite conversation history for the demo
 session.
+
+## 7. Optional API and CLI Check
+
+If time allows, show the alternate interfaces:
+
+```bash
+uvicorn app.main:app --reload
+```
+
+```bash
+python cli.py
+```
