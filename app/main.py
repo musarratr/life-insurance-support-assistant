@@ -1,3 +1,5 @@
+from typing import Optional
+
 from fastapi import FastAPI, HTTPException
 
 from app.agent import LifeInsuranceAgent
@@ -11,7 +13,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-_agent: LifeInsuranceAgent | None = None
+_agent: Optional[LifeInsuranceAgent] = None
 
 
 @app.on_event("startup")
