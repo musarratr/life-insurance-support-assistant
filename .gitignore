@@ -1,0 +1,96 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Python build files
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# IDE / Editor files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# SQLite / Local databases
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# Testing / Coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# Jupyter / Notebook checkpoints
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# FastAPI / Uvicorn
+# =========================
+*.pid
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# =========================
+# Demo / Recording files
+# =========================
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# =========================
+# Keep important project files
+# =========================
+!README.md
+!requirements.txt
+!demo_script.md
+!data/life_insurance_kb.md
