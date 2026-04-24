@@ -1,6 +1,6 @@
 # Life Insurance Support Assistant
 
-A simple Python 3.10+ conversational assistant for general life insurance
+A simple Python 3.9+ conversational assistant for general life insurance
 support. It uses FastAPI for the backend API, OpenAI through LangChain for
 responses, a markdown knowledge base for domain context, SQLite for local
 conversation memory, and a basic CLI for chat.
@@ -48,10 +48,11 @@ life-insurance-support-assistant/
 
 ## Setup
 
-Create and activate a virtual environment:
+Create and activate a virtual environment. Python 3.10+ is recommended, but the
+code is compatible with Python 3.9 in local environments:
 
 ```bash
-python3.10 -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
