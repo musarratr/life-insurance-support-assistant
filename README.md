@@ -150,14 +150,3 @@ or policy-specific advice. It cannot guarantee eligibility, premiums, coverage,
 claim approval, or payout amounts. For exact coverage, claim decisions, or
 personal advice, contact the insurer, employer benefits administrator, or a
 licensed professional.
-
-## Demo Video Instructions
-
-For a 3 to 5 minute demo, show:
-
-1. The repository structure and `.env.example`.
-2. The Streamlit chat interface starting with `streamlit run streamlit_app.py`.
-3. A few life insurance questions across the same session.
-4. A follow-up question that proves conversation memory works.
-5. A policy-specific question where the assistant avoids making guarantees.
-6. Optionally, show the FastAPI server and CLI as alternate interfaces.
